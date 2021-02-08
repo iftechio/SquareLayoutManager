@@ -1,11 +1,11 @@
 package com.sinyu.android.square
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.sinyu.android.library.square.SquareLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         rvSquare.apply {
             this.adapter = adapter
-            rvSquare.layoutManager = SquareLayoutManager(20, 20).apply {
+            rvSquare.layoutManager = SquareLayoutManager(20).apply {
                 squareLayoutManager = this
                 setOnItemSelectedListener { postion ->
                     Toast.makeText(context, "当前选中：$postion", Toast.LENGTH_SHORT).show()
