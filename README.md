@@ -1,7 +1,7 @@
 # SquareLayoutManager
 ### 效果图
 
-<img width="300" height="550" src="https://github.com/sinyu1012/SquareLayoutManager/blob/main/image/demo.gif" />
+<img width="300" height="600" src="https://github.com/sinyu1012/SquareLayoutManager/blob/main/image/demo.gif" />
 
 
 
