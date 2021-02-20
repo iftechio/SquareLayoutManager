@@ -1,7 +1,30 @@
 # SquareLayoutManager
 ### 效果图
 
-<img src="image/demo.gif" style="zoom:30%;" />
+<img width="300" height="550" src="https://github.com/sinyu1012/SquareLayoutManager/blob/main/image/demo.gif" />
+
+
+
+### 添加依赖
+Add it in your root build.gradle at the end of repositories:
+
+```groovy
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+
+Add the dependency
+
+```groovy
+dependencies {
+      implementation 'com.github.sinyu1012:SquareLayoutManager:<version>'
+}
+```
 
 ### 基本使用
 
