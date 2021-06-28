@@ -30,7 +30,7 @@ dependencies {
 
 ```kotlin
 // 设置 RecyclerView 的 layoutManager
-// 构造函数参数 spanCount为一行有多少个 ItemView，startPosition 为其实位置（不传默认中间）
+// 构造函数参数 spanCount为一行有多少个 ItemView，startPosition 为起始位置（不传默认中间）
 rvSquare.layoutManager = SquareLayoutManager(20, 10)
 ```
 
