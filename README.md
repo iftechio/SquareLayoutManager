@@ -22,7 +22,7 @@ Add the dependency
 
 ```groovy
 dependencies {
-      implementation 'com.github.sinyu1012:SquareLayoutManager:<version>'
+      implementation 'io.iftech.android:SquareLayoutManager:<version>'
 }
 ```
 

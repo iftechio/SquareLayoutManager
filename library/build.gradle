@@ -4,7 +4,7 @@ plugins {
     id 'com.github.dcendents.android-maven'
 }
 
-group='com.github.sinyu1012'
+group='io.iftech.android'
 
 android {
     compileSdkVersion 30

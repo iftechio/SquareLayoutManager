@@ -1,4 +1,4 @@
-package com.sinyu.android.square
+package io.iftech.android.square
 
 import android.graphics.Color
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.sinyu.android.library.square.SquareLayoutManager
+import io.iftech.android.library.square.SquareLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_holder_debug_rv_square.view.*
 import kotlin.random.Random

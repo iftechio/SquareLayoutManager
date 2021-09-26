@@ -1,4 +1,4 @@
-package com.sinyu.android.library.square
+package io.iftech.android.library.square
 
 import android.animation.ValueAnimator
 import android.graphics.Point
