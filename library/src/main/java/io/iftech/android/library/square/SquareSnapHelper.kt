@@ -47,6 +47,12 @@ class SquareSnapHelper : RecyclerView.OnFlingListener() {
     }
 
     fun attachToRecyclerView(recyclerView: RecyclerView?) {
+        if (mRecyclerView === recyclerView) {
+            return
+        }
+        if (mRecyclerView != null) {
+            destroyCallbacks()
+        }
         mRecyclerView = recyclerView
         recyclerView?.let {
             mGravityScroller = Scroller(
@@ -56,6 +62,11 @@ class SquareSnapHelper : RecyclerView.OnFlingListener() {
             setupCallbacks()
         }
 
+    }
+
+    private fun destroyCallbacks() {
+        mRecyclerView?.removeOnScrollListener(mScrollListener)
+        mRecyclerView?.onFlingListener = null
     }
 
     private fun setupCallbacks() {
