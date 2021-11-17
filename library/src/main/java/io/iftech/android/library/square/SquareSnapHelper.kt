@@ -10,7 +10,7 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
 
-class SquareSnapHelper : RecyclerView.OnFlingListener() {
+internal class SquareSnapHelper : RecyclerView.OnFlingListener() {
 
     private var mVerticalHelper: OrientationHelper? = null
     private var mHorizontalHelper: OrientationHelper? = null

@@ -51,17 +51,45 @@ class SquareLayoutManager @JvmOverloads constructor(
     private val horizontalMinOffset: Float
         get() = if (childWidth == 0) 0f else (width - childWidth) / 2f
 
-    var isAutoSelect = true
     private var selectAnimator: ValueAnimator? = null
 
     /**
-     * 初始化布局的时候，是否是定位到中心的 item
+     * 使用 SnapHelper 自动选中最靠近中心的 Item，默认为true
+     */
+    var isAutoSelect = true
+
+    /**
+     * 初始化布局的时候，是否定位到中心的 Item
      */
     var isInitLayoutCenter = true
     private var isFirstLayout = true
 
     private var lastSelectedPosition = 0
     private var onItemSelectedListener: (Int) -> Unit = {}
+
+    /**
+     * 滑动到指定位置
+     */
+    fun smoothScrollToPosition(position: Int) {
+        if (position > -1 && position < itemCount) {
+            startValueAnimator(position)
+        }
+    }
+
+    /**
+     * 滑动到中心
+     */
+    fun smoothScrollToCenter() {
+        val centerPos = rowCount / 2 * spanCount + spanCount / 2
+        smoothScrollToPosition(centerPos)
+    }
+
+    /**
+     * 设置选中 Item 的监听回调
+     */
+    fun setOnItemSelectedListener(listener: (Int) -> Unit) {
+        onItemSelectedListener = listener
+    }
 
     override fun generateDefaultLayoutParams(): RecyclerView.LayoutParams {
         return RecyclerView.LayoutParams(
@@ -327,17 +355,6 @@ class SquareLayoutManager @JvmOverloads constructor(
         return childWidth * (targetPos % spanCount) - horizontalOffset.toInt()
     }
 
-    fun smoothScrollToPosition(position: Int) {
-        if (position > -1 && position < itemCount) {
-            startValueAnimator(position)
-        }
-    }
-
-    fun smoothScrollToCenter() {
-        val centerPos = rowCount / 2 * spanCount + spanCount / 2
-        smoothScrollToPosition(centerPos)
-    }
-
     override fun smoothScrollToPosition(
         recyclerView: RecyclerView?,
         state: RecyclerView.State?,
@@ -346,9 +363,6 @@ class SquareLayoutManager @JvmOverloads constructor(
         smoothScrollToPosition(position)
     }
 
-    fun setOnItemSelectedListener(listener: (Int) -> Unit) {
-        onItemSelectedListener = listener
-    }
 
     private fun startValueAnimator(position: Int) {
         cancelAnimator()
