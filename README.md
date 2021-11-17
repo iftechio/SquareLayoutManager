@@ -26,6 +26,10 @@ dependencies {
 }
 ```
 
+### 实现原理
+
+[小宇宙广场列表实现SquareLayoutManager](https://zhuanlan.zhihu.com/p/434281758)
+
 ### 基本使用
 
 设置 `RecyclerView` 的 `LayoutManager`：
